@@ -1,0 +1,7 @@
+target/
+Cargo.lock
+*.tape
+*.marker
+.env
+.DS_Store
+*.log
