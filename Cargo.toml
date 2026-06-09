@@ -1,0 +1,26 @@
+[package]
+name = "vibe-tape"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sovereign Shovels <github.com/sovereign-shovels>"]
+license = "Apache-2.0"
+description = "Record and replay every AI agent session — what did the bot actually do?"
+repository = "https://github.com/sovereign-shovels/vibe-tape"
+
+[dependencies]
+tokio = { version = "1", features = ["full", "process", "io-util"] }
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+notify = "6"
+chrono = { version = "0.4", features = ["serde"] }
+sha2 = "0.10"
+flate2 = "1"
+regex = "1"
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
